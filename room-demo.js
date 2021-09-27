@@ -26,6 +26,9 @@ var demo = {
         camera.inputs.addMouse();
         camera.attachControl(canvas);
         scene.activeCamera = camera
+        
+        let cursorPlane = scene.getMeshByName("imlec");
+        cursorPlane.isVisible = false;
 
         //closing default rig lights
 
