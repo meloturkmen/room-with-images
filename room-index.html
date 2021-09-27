@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<style>
+  .noSelect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  }
+</style>
+
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5WH69G4');</script>
+  <!-- End Google Tag Manager -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Room With Images</title>
+
+  <link href="index.css" rel="stylesheet" />
+  <script src="pep.min.js"></script>
+  <script src="babylon.js"></script>
+  <script src="gui.min.js"></script>
+  <script src="babylon.glTFFileLoader.js"></script>
+  <script src="babylon.manager.js"></script>
+  <script src="room-index.js"></script>
+  <script src="room-demo.js"></script>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5WH69G4" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <canvas id="renderCanvas" touch-action="none" class="noSelect"></canvas>
+  <div id="fps"></div>
+  <div id="stats"></div>
+  <div id="status"></div>
+  <div id="cameraPanel">
+    <div id="cameraControlsZone">
+      Active camera:<br />
+      <select id="camerasList"></select>
+      <p>
+        Change control method:
+        <button class="buttonControlPanel" id="touchCamera">
+          <img src="assets/CamTouchOff.png" class="buttonImg" />Touch camera
+        </button>
+        <button class="buttonControlPanel" id="deviceOrientationCamera">
+          <img src="assets/CamDeviceOff.png" class="buttonImg" />VR Device
+          orientation camera
+        </button>
+        <button class="buttonControlPanel" id="gamepadCamera">
+          <img src="assets/CamGamepadJoy.png" class="buttonImg" />Gamepad
+          camera
+        </button>
+        <button class="buttonControlPanel" id="virtualJoysticksCamera">
+          <img src="assets/CamVirtualJoy.png" class="buttonImg" />Virtual
+          joysticks camera
+        </button>
+        <button class="buttonControlPanel" id="anaglyphCamera">
+          <img src="assets/CamAnaGly.png" class="buttonImg" />Anaglyph camera
+        </button>
+      </p>
+      <p>
+        Post-processes:
+        <button class="smallButtonControlPanel" id="toggleFxaa">
+          Toggle FXAA (antialiasing)
+        </button>
+        <button class="smallButtonControlPanel" id="toggleFsaa4">
+          Toggle FSAA 4X (antialiasing)
+        </button>
+        <button class="smallButtonControlPanel" id="toggleBandW">
+          Toggle Black and white
+        </button>
+        <button class="smallButtonControlPanel" id="toggleSepia">
+          Toggle Sepia
+        </button>
+      </p>
+    </div>
+    <div class="cameraTag"><img src="assets/camera.png" /></div>
+    <div class="cameraTag" id="cameraClickableTag"></div>
+  </div>
+  <div id="notSupported" class="hidden">
+    Sorry but your browser does not support WebGL...
+  </div>
+  <script src="loaderCustom.js"></script>
+</body>
+
+</html>
